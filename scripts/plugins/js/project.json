@@ -1,0 +1,44 @@
+{
+  "name": "library",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "scripts/plugins/js/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:swc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/scripts/plugins/js",
+        "main": "scripts/plugins/js/src/index.ts",
+        "tsConfig": "scripts/plugins/js/tsconfig.lib.json",
+        "assets": [
+          "scripts/plugins/js/*.md",
+          {
+            "input": "./scripts/plugins/js/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./scripts/plugins/js/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./scripts/plugins/js",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./scripts/plugins/js",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

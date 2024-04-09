@@ -1,0 +1,15 @@
+{
+  "name": "@code-craft/library",
+  "version": "0.0.1",
+  "dependencies": {
+    "@nx/devkit": "18.2.3",
+    "@swc/helpers": "~0.5.2",
+    "@nx/eslint": "18.2.3",
+    "@nx/js": "18.2.3"
+  },
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts",
+  "private": true,
+  "generators": "./generators.json"
+}
