@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "commit": "czg",
+    "nx": "nx",
     "prepare": "husky",
     "check-commit": "node ./scripts/commit-lint.js",
     "check-lock-files": "node ./scripts/check-lock-files.js",
