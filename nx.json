@@ -2,8 +2,28 @@
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
-    "production": ["default"],
+    "production": [
+      "default",
+      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/eslint.config.js"
+    ],
     "sharedGlobals": []
   },
-  "nxCloudAccessToken": "MTc0MTg5MGYtMzc0MC00OGRlLWFlYWItZDUyMTVhMGZhMzc2fHJlYWQtd3JpdGU="
+  "nxCloudAccessToken": "MTc0MTg5MGYtMzc0MC00OGRlLWFlYWItZDUyMTVhMGZhMzc2fHJlYWQtd3JpdGU=",
+  "targetDefaults": {
+    "@nx/js:swc": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    },
+    "@nx/eslint:lint": {
+      "cache": true,
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.eslintrc.json",
+        "{workspaceRoot}/.eslintignore",
+        "{workspaceRoot}/eslint.config.js"
+      ]
+    }
+  }
 }

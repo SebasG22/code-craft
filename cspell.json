@@ -1,12 +1,19 @@
 {
   "version": "0.2",
   "language": "en",
-  "words": ["qwik", "Prefixs"],
+  "words": [
+    "buildable",
+    "devkit",
+    "Prefixs",
+    "qwik"
+  ],
   "ignorePaths": [
     "node_modules/**",
     "dist/**",
     "pnpm-lock.yaml",
     "CHANGELOG.md"
   ],
-  "files": ["**/*.{md,txt,json,js,jsx,ts,tsx,html,xml,yaml,yml}"]
+  "files": [
+    "**/*.{md,txt,json,js,jsx,ts,tsx,html,xml,yaml,yml}"
+  ]
 }

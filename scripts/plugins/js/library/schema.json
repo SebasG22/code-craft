@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "Library",
+  "title": "Library",
+  "type": "object",
+  "properties": {
+    "projectName": {
+      "type": "string",
+      "x-dropdown": "projects",
+      "description": "The name of the project related to the library.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "domain": {
+      "type": "string",
+      "description": "The domain would you like to use.",
+      "x-prompt": "What is the domain would you like to use?"
+    },
+    "type": {
+      "type": "string",
+      "description": "",
+      "enum": ["feature-shell", "data-access", "utils", "ui"]
+    }
+  },
+  "required": ["projectName", "domain", "type"]
+}
