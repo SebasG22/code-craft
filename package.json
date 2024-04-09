@@ -2,9 +2,27 @@
   "name": "@code-craft/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "commit": "czg",
+    "prepare": "husky",
+    "check-commit": "node ./scripts/commit-lint.js",
+    "check-lock-files": "node ./scripts/check-lock-files.js",
+    "cspell": "cspell \"**/*.{md,txt,json,js,jsx,ts,tsx,html,xml,yaml,yml}\" --gitignore --fail-fast --words-only --no-progress"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-git",
+      "czConfig": "./commitizen.js"
+    }
+  },
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "commitizen": "^4.3.0",
+    "cspell": "^8.6.1",
+    "czg": "^1.9.1",
+    "husky": "^9.0.11",
+    "prettier": "^3.2.5"
+  },
   "devDependencies": {
     "@nx/js": "18.2.3",
     "@nx/workspace": "18.2.3",

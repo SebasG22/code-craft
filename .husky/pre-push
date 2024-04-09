@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+pnpm check-commit &&
+pnpm run nx format:check &&
+pnpm run nx affected:lint &&
+pnpm run nx affected:test &&
+pnpm run nx affected:build
