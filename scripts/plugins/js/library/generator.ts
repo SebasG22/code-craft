@@ -15,7 +15,7 @@ export async function libraryGenerator(
     bundler: 'swc',
     directory: projectRoot,
     linter: Linter.EsLint,
-    name: `${options.projectName}-${options.type}`,
+    name: `${options.projectName}-${options.domain}-${options.type}`,
     setParserOptionsProject: false,
     skipTsConfig: false,
     strict: true,
