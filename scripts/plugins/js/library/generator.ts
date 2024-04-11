@@ -8,14 +8,14 @@ export async function libraryGenerator(
   tree: Tree,
   options: LibraryGeneratorSchema,
 ) {
-  const projectRoot = `libs/${options.projectName}/${options.domain}`;
+  const projectRoot = `libs/${options.projectName}/${options.domain}/${options.type}`;
 
   await jsLibraryGenerator(tree, {
     buildable: true,
     bundler: 'swc',
     directory: projectRoot,
     linter: Linter.EsLint,
-    name: `${options.projectName}-${options.type}`,
+    name: `${options.projectName}-${options.domain}-${options.type}`,
     setParserOptionsProject: false,
     skipTsConfig: false,
     strict: true,
